@@ -1,0 +1,35 @@
+.project-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff5f7;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-content {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+  }
+  
+  .tasks-grid {
+    display: flex;
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .tasks-grid {
+      flex-direction: column;
+    }
+  
+    .project-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
