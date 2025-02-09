@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+      border-color: var(--color-gray-200, currentColor);
+    }
+  }
+
+@theme {
+    --*: initial;
+    --spacing: 4px;
+    --font-body: Inter, sans-serif;
+  
+    /* Tus colores personalizados */
+    --color-background: oklch(87.55% 0.0717 57.73);
+    --color-background-sec: #452814;
+    --color-background-third: #895e41;
+    --color-background-beige: #f9e9da;
+    --color-background-latte: #e3d9cd;
+  
+    --color-brown-first: #543821;
+    --color-brown-sec: #3b2a1c;
+    --color-brown-third: #603b1d;
+    --color-brown-beige: #a4968a;
+    --color-brown-coffee: #8e7c6d;
+  }
+  

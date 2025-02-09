@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { LogOut } from "lucide-react";
 
 export function BotonCerrarSesion() {
     const navigate = useNavigate();
@@ -11,8 +12,15 @@ export function BotonCerrarSesion() {
     };
 
     return (
-        <button onClick={handleLogout} className="btn btn-danger">
+        <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 px-6 py-2 bg-red-600 text-white font-semibold 
+                   rounded-lg shadow-md hover:bg-red-700 transition duration-300 
+                   focus:outline-none focus:ring-2 focus:ring-red-400"
+        >
+            <LogOut size={20} />
             Cerrar Sesión
         </button>
+
     );
 }
