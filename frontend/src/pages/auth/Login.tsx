@@ -39,7 +39,7 @@ const Login = () => {
             const userRole = payload?.rol; 
     
             if (userRole === 'ADMINISTRADOR') {
-                navigate('/new'); // Redirigir a NewProject si es administrador
+                navigate('/admin'); // Redirigir a admin si es administrador
             } else {
                 navigate('/dashboard'); // Redirigir al dashboard si es otro rol
             }

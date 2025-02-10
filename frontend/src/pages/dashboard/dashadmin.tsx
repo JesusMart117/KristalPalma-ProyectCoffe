@@ -172,7 +172,7 @@ function Dashboard () {
             <div className="bg-[#fbcba8]-beige p-8 rounded-xl shadow-2xl">
               <div className="flex items-center gap-4 mb-8">
                 <img
-                  src="src/images/soft to all.png"
+                  src="src/assets/images/comida.png"
                   className="w-14 h-14 object-cover rounded-full"
                 />
                 <div>
@@ -182,7 +182,7 @@ function Dashboard () {
               </div>
               <div className="flex items-center gap-4 mb-4">
                 <img
-                  src="src/images/speed.png"
+                  src="src/assets/images/book.png"
                   className="w-14 h-14 object-cover rounded-full"
                 />
                 <div>
