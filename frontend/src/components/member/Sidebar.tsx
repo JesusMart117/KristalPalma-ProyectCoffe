@@ -27,17 +27,17 @@ const Sidebar = () => {
                     <nav className="flex flex-col gap-3">
 
                         {/* Pages */}
-                        <a href="#" className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-[#603b1d] transition-colors">
+                        <a href="/dashboard" className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-[#603b1d] transition-colors">
                         <LayoutDashboard /> Inicio
                         </a>
-                        <a href="#" className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-[#603b1d] transition-colors">
+                        <a href="/MisProyectos" className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-[#603b1d] transition-colors">
                         <StickyNote /> Proyectos
                         </a>
-                        <a href="#" className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-[#603b1d] transition-colors">
-                        <Users /> Equipos
+                        <a href="/Miembros" className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-[#603b1d] transition-colors">
+                        <Users /> Miembros
                         </a>
-                        <a href="#" className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-[#603b1d] transition-colors">
-                        <Grid2x2 /> Inventario
+                        <a href="/Recursos" className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-[#603b1d] transition-colors">
+                        <Grid2x2 /> Recursos
                         </a>
                         <BotonCerrarSesion />
                     </nav>

@@ -24,16 +24,16 @@ const Sidebar = () => {
                 {/* Navegación */}
                 <div className="bg-primary-300 p-6 rounded-tr-[80px] h-[70vh] flex flex-col justify-between relative">
                     <nav className="flex flex-col gap-4">
-                        <a href="#" className="flex items-center gap-3 text-white py-2 px-4 rounded-lg hover:bg-[#603b1d] transition-colors">
+                        <a href="/admin" className="flex items-center gap-3 text-white py-2 px-4 rounded-lg hover:bg-[#603b1d] transition-colors">
                             <LayoutDashboard /> Inicio
                         </a>
-                        <a href="#" className="flex items-center gap-3 text-white py-2 px-4 rounded-lg hover:bg-[#603b1d] transition-colors">
+                        <a href="/MisProyectos" className="flex items-center gap-3 text-white py-2 px-4 rounded-lg hover:bg-[#603b1d] transition-colors">
                             <StickyNote /> Proyectos
                         </a>
-                        <a href="#" className="flex items-center gap-3 text-white py-2 px-4 rounded-lg hover:bg-[#603b1d] transition-colors">
+                        <a href="/Teams" className="flex items-center gap-3 text-white py-2 px-4 rounded-lg hover:bg-[#603b1d] transition-colors">
                             <Users /> Equipos
                         </a>
-                        <a href="#" className="flex items-center gap-3 text-white py-2 px-4 rounded-lg hover:bg-[#603b1d] transition-colors">
+                        <a href="/stock" className="flex items-center gap-3 text-white py-2 px-4 rounded-lg hover:bg-[#603b1d] transition-colors">
                             <Grid2x2 /> Inventario
                         </a>
                         <BotonCerrarSesion />

@@ -112,7 +112,7 @@ function Dashboard () {
           <div className="bg-[#e3d9cd] p-6 rounded-xl shadow-lg">
             <div className="grid grid-cols-1 gap-4">
               {[ 
-                { title: "Jardín Inteligente", status: "En Curso", team: "Team Garden", color: "bg-yellow-200 text-yellow-900" },
+                { title: "Herbology Experts", status: "En Curso", team: "Team Garden", color: "bg-yellow-200 text-yellow-900" },
                 { title: "Centinela Security", status: "Pendiente", team: "Team Sentinel", color: "bg-red-200 text-red-900" }
               ].map((proj, index) => (
                 <div key={index} className="flex items-center justify-between bg-white p-4 rounded-lg shadow">

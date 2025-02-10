@@ -16,9 +16,6 @@
     pregunta    String
     respuesta   String
 
-    tareas    MiembrosTareas[]
-    equipos   MiembrosEquipos[]
-    proyectos MiembrosProyectos[]
   }
 
   enum RolMiembro{
@@ -27,57 +24,4 @@
     ADMINISTRADOR
   }
 
-  model Tarea{
-    id_tarea      Int @id @default(autoincrement())
-    nombre        String
-    descripcion   String
-    fecha_inicio  DateTime @default(now())
-    estado        EstadoTarea @default(EN_PROGRESO)
-
-    miembro       MiembrosTareas[]
-  }
-
-  enum EstadoTarea{
-    PENDIENTE
-    EN_PROGRESO
-    FINALIZADA
-  }
-
-  model Equipo{
-    id_equipo   Int @id @default(autoincrement())
-    nombre      String
-
-    miembro     MiembrosEquipos[]
-  }
-
-  model Proyecto{
-    id_proyecto   Int @id @default(autoincrement())  
-    nombre        String
-    fecha_inicio  DateTime @default(now())
-    
-    miembro       MiembrosProyectos[]
-  }
-
-  model MiembrosTareas{
-    id_miembro    Int
-    id_tarea      Int
-    miembro       Miembro @relation(fields: [id_miembro], references: [id_miembro])
-    tarea         Tarea @relation(fields: [id_tarea], references: [id_tarea])
-    @@id([id_miembro, id_tarea])
-  }
-
-  model MiembrosEquipos{
-    id_miembro    Int
-    id_equipo     Int
-    miembro       Miembro @relation(fields: [id_miembro], references: [id_miembro])
-    equipo        Equipo @relation(fields: [id_equipo], references: [id_equipo])
-    @@id([id_miembro, id_equipo])
-  }
-
-  model MiembrosProyectos{
-    id_miembro    Int
-    id_proyecto   Int
-    miembro       Miembro @relation(fields: [id_miembro], references: [id_miembro])
-    proyecto      Proyecto @relation(fields: [id_proyecto], references:[id_proyecto])
-    @@id([id_miembro, id_proyecto])
-  }
+  

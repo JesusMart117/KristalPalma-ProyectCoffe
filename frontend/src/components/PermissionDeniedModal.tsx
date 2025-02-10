@@ -15,7 +15,7 @@ const PermissionDeniedModal: React.FC<PermissionDeniedModalProps> = ({ onClose }
         
         // Redirigir según el rol del usuario
         if (userRole === 'ADMINISTRADOR') {
-            window.location.href = "/new";  // Administrador va a "new"
+            window.location.href = "/admin";  // Administrador va a "new"
         } else {
             window.location.href = "/dashboard"; // Otros roles van a "dashboard"
         }
