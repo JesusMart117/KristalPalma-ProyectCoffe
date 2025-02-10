@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DOMPurify from 'dompurify';
 import { registerUser } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
-import './../../index.css'
+import './../../index.css';
 
 const Register = () => {
     const [correo, setCorreo] = useState('');
@@ -11,6 +11,7 @@ const Register = () => {
     const [pregunta, setPregunta] = useState('');
     const [respuesta, setRespuesta] = useState('');
     const [error, setError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
     const navigate = useNavigate();
 
     const securityQuestions = [
@@ -24,12 +25,21 @@ const Register = () => {
     const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        // Validación de contraseña (debe contener al menos un carácter especial)
+        const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+        if (!specialCharRegex.test(contra)) {
+            setPasswordError('La contraseña debe contener al menos un carácter especial.');
+            return;
+        } else {
+            setPasswordError(''); // Limpiar el error si la contraseña es válida
+        }
+
         const cleanedNombre = DOMPurify.sanitize(nombre);
         const cleanedRespuesta = DOMPurify.sanitize(respuesta);
 
         try {
             await registerUser(correo, contra, cleanedNombre, pregunta, cleanedRespuesta);
-            navigate('/login');
+            navigate('/successful');
         } catch (err) {
             setError(err as string);
         }
@@ -62,6 +72,7 @@ const Register = () => {
                                 required
                                 className="w-full rounded-md p-2 border-2 border-gray-300 outline-none focus:border-gray-500"
                             />
+                            {passwordError && <p className="text-sm text-red-500">{passwordError}</p>}
                             <input
                                 type="text"
                                 value={nombre}
@@ -109,12 +120,10 @@ const Register = () => {
                         </form>
                     </div>
                 </div>
-                <div className="hidden md:block md:w-1/2 bg-cover bg-center" style={{ backgroundImage: "url('src/assets/images/Login1.jpg')" }}>
-                </div>
+                <div className="hidden md:block md:w-1/2 bg-cover bg-center" style={{ backgroundImage: "url('src/assets/images/Login1.jpg')" }}></div>
             </div>
         </section>
     );
-
 };
 
 export default Register;

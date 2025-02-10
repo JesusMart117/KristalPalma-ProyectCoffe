@@ -1,14 +1,19 @@
 import { useNavigate } from 'react-router-dom';
-import { LogOut } from "lucide-react";
+import { LogOut } from 'lucide-react';
 
 export function BotonCerrarSesion() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        // Lógica para cerrar sesión, por ejemplo, eliminar el token de autenticación
-        localStorage.removeItem('token');
-        // Limpiar el historial de navegación y redirigir al usuario a la página de inicio de sesión
-        navigate('/login', { replace: true });
+        // Mostrar un cuadro de confirmación
+        const confirmar = window.confirm('¿Estás seguro de que quieres cerrar sesión?');
+        
+        if (confirmar) {
+            // Lógica para cerrar sesión, por ejemplo, eliminar el token de autenticación
+            localStorage.removeItem('token');
+            // Limpiar el historial de navegación y redirigir al usuario a la página de inicio de sesión
+            navigate('/login', { replace: true });
+        }
     };
 
     return (
@@ -21,6 +26,5 @@ export function BotonCerrarSesion() {
             <LogOut size={20} />
             Cerrar Sesión
         </button>
-
     );
 }
